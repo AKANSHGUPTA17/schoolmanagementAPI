@@ -1,1 +1,76 @@
+2026-07-21 21:55:47.353 +05:30 [INF] Executed DbCommand (160ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='StudentManagementDb' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-21 21:55:47.721 +05:30 [INF] Executed DbCommand (111ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+2026-07-21 21:55:47.754 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='StudentManagementDb' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-21 21:55:47.782 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-21 21:55:47.815 +05:30 [INF] Applying migration '20260721162507_InitialCreate'.
+2026-07-21 21:55:47.889 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER DATABASE CHARACTER SET utf8mb4;
+2026-07-21 21:55:47.927 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Students` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Name` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+    `Email` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `Age` int NOT NULL,
+    `Course` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+    `CreatedDate` datetime(6) NOT NULL,
+    CONSTRAINT `PK_Students` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-07-21 21:55:47.986 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX `IX_Students_Email` ON `Students` (`Email`);
+2026-07-21 21:55:47.994 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260721162507_InitialCreate', '8.0.8');
+2026-07-21 21:56:39.557 +05:30 [INF] User profile is available. Using 'C:\Users\Akansh Gupta\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-21 21:56:39.647 +05:30 [INF] Creating key {daeb46e0-b08d-4fd3-9ead-f7207fbf816d} with creation date 2026-07-21 16:26:39Z, activation date 2026-07-21 16:26:39Z, and expiration date 2026-10-19 16:26:39Z.
+2026-07-21 21:56:39.671 +05:30 [INF] Writing data to file 'C:\Users\Akansh Gupta\AppData\Local\ASP.NET\DataProtection-Keys\key-daeb46e0-b08d-4fd3-9ead-f7207fbf816d.xml'.
+2026-07-21 21:56:39.910 +05:30 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2026-07-21 21:56:39.935 +05:30 [INF] Now listening on: https://localhost:5001
+2026-07-21 21:56:39.936 +05:30 [INF] Now listening on: http://localhost:5000
+2026-07-21 21:56:39.939 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-21 21:56:39.941 +05:30 [INF] Hosting environment: Production
+2026-07-21 21:56:39.942 +05:30 [INF] Content root path: c:\Users\Akansh Gupta\Downloads\StudentManagementAPI\StudentManagementAPI
+2026-07-21 21:56:58.507 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 47
+2026-07-21 21:56:58.602 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 307 0 null 99.4562ms
+2026-07-21 21:57:13.702 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/auth/login - application/json 47
+2026-07-21 21:57:13.799 +05:30 [INF] Executing endpoint 'StudentManagementAPI.Controllers.AuthController.Login (StudentManagementAPI)'
+2026-07-21 21:57:13.849 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(StudentManagementAPI.DTOs.LoginDto) on controller StudentManagementAPI.Controllers.AuthController (StudentManagementAPI).
+2026-07-21 21:57:13.937 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-07-21 21:57:14.005 +05:30 [INF] Executed action StudentManagementAPI.Controllers.AuthController.Login (StudentManagementAPI) in 148.4449ms
+2026-07-21 21:57:14.007 +05:30 [INF] Executed endpoint 'StudentManagementAPI.Controllers.AuthController.Login (StudentManagementAPI)'
+2026-07-21 21:57:14.011 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:5001/api/auth/login - 400 null application/problem+json; charset=utf-8 308.7509ms
+2026-07-21 21:57:28.122 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/auth/login - application/json 64
+2026-07-21 21:57:28.127 +05:30 [INF] Executing endpoint 'StudentManagementAPI.Controllers.AuthController.Login (StudentManagementAPI)'
+2026-07-21 21:57:28.128 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(StudentManagementAPI.DTOs.LoginDto) on controller StudentManagementAPI.Controllers.AuthController (StudentManagementAPI).
+2026-07-21 21:57:28.200 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-21 21:57:28.210 +05:30 [INF] Executed action StudentManagementAPI.Controllers.AuthController.Login (StudentManagementAPI) in 81.2829ms
+2026-07-21 21:57:28.210 +05:30 [INF] Executed endpoint 'StudentManagementAPI.Controllers.AuthController.Login (StudentManagementAPI)'
+2026-07-21 21:57:28.211 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 88.9595ms
+2026-07-21 21:57:48.899 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/auth/login - application/json 64
+2026-07-21 21:57:48.903 +05:30 [INF] Executing endpoint 'StudentManagementAPI.Controllers.AuthController.Login (StudentManagementAPI)'
+2026-07-21 21:57:48.906 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(StudentManagementAPI.DTOs.LoginDto) on controller StudentManagementAPI.Controllers.AuthController (StudentManagementAPI).
+2026-07-21 21:57:48.911 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-21 21:57:48.912 +05:30 [INF] Executed action StudentManagementAPI.Controllers.AuthController.Login (StudentManagementAPI) in 5.2643ms
+2026-07-21 21:57:48.913 +05:30 [INF] Executed endpoint 'StudentManagementAPI.Controllers.AuthController.Login (StudentManagementAPI)'
+2026-07-21 21:57:48.914 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 15.5353ms
+2026-07-21 21:57:49.565 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/students - null null
+2026-07-21 21:57:49.684 +05:30 [INF] Executing endpoint 'StudentManagementAPI.Controllers.StudentsController.GetAll (StudentManagementAPI)'
+2026-07-21 21:57:49.701 +05:30 [INF] Route matched with {action = "GetAll", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StudentManagementAPI.DTOs.StudentResponseDto]]] GetAll() on controller StudentManagementAPI.Controllers.StudentsController (StudentManagementAPI).
+2026-07-21 21:57:50.442 +05:30 [INF] Fetching all students
+2026-07-21 21:57:52.806 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Age`, `s`.`Course`, `s`.`CreatedDate`, `s`.`Email`, `s`.`Name`
+FROM `Students` AS `s`
+2026-07-21 21:57:52.870 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[StudentManagementAPI.Models.Student, StudentManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[StudentManagementAPI.DTOs.StudentResponseDto, StudentManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-21 21:57:52.935 +05:30 [INF] Executed action StudentManagementAPI.Controllers.StudentsController.GetAll (StudentManagementAPI) in 3233.4065ms
+2026-07-21 21:57:52.936 +05:30 [INF] Executed endpoint 'StudentManagementAPI.Controllers.StudentsController.GetAll (StudentManagementAPI)'
+2026-07-21 21:57:52.951 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/students - 200 null application/json; charset=utf-8 3385.9082ms
 
