@@ -89,10 +89,3 @@ The API will be available at `https://localhost:<port>` and Swagger UI at `https
 All errors return a consistent JSON shape via global middleware:
 ```json
 { "statusCode": 404, "message": "Student with id 5 was not found." }
-```
-
-## Possible Next Steps (Bonus)
-
-- Add unit tests for `StudentService` (xUnit + Moq)
-- Add a `Dockerfile` + `docker-compose.yml` for API + SQL Server
-- Add a small React/Angular UI consuming these endpoints
